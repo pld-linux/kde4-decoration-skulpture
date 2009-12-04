@@ -8,8 +8,16 @@ Group:		X11/Amusements
 Source0:	http://skulpture.maxiom.de/releases/skulpture-%{version}.tar.bz2
 # Source0-md5:	78b1a4796cb3945d86fccc770c034d49
 URL:		http://skulpture.maxiom.de/
+BuildRequires:	QtCore-devel
+BuildRequires:	QtGui-devel
+BuildRequires:	QtSvg-devel
 BuildRequires:	automoc4
 BuildRequires:	cmake
+BuildRequires:	kde4-kdebase-workspace-devel
+BuildRequires:	kde4-kdelibs-devel
+BuildRequires:	libstdc++-devel
+BuildRequires:	qt4-build
+BuildRequires:	qt4-qmake
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
