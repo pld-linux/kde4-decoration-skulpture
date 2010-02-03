@@ -1,3 +1,7 @@
+
+%define		qtver	4.5.3
+%define		kdever	4.3.5
+
 Summary:	KDE4 minimalistic window decoration
 Summary(pl.UTF-8):	Minimalistyczna dekoracja okien dla KDE4
 Name:		kde4-decoration-skulpture
@@ -8,16 +12,16 @@ Group:		X11/Amusements
 Source0:	http://skulpture.maxiom.de/releases/skulpture-%{version}.tar.bz2
 # Source0-md5:	78b1a4796cb3945d86fccc770c034d49
 URL:		http://skulpture.maxiom.de/
-BuildRequires:	QtCore-devel
-BuildRequires:	QtGui-devel
-BuildRequires:	QtSvg-devel
-BuildRequires:	automoc4
-BuildRequires:	cmake
-BuildRequires:	kde4-kdebase-workspace-devel
-BuildRequires:	kde4-kdelibs-devel
+BuildRequires:	QtCore-devel >= %{qtver}
+BuildRequires:	QtGui-devel >= %{qtver}
+BuildRequires:	QtSvg-devel >= %{qtver}
+BuildRequires:	automoc4 >= 0.9.88
+BuildRequires:	cmake >= 2.6.3
+BuildRequires:	kde4-kdebase-workspace-devel >= %{kdever}
+BuildRequires:	kde4-kdelibs-devel >= %{kdever}
 BuildRequires:	libstdc++-devel
-BuildRequires:	qt4-build
-BuildRequires:	qt4-qmake
+BuildRequires:	qt4-build >= %{qtver}
+BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
