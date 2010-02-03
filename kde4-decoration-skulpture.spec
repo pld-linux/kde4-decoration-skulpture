@@ -1,15 +1,16 @@
 
 %define		qtver	4.5.3
 %define		kdever	4.3.5
+%define		orgname	skulpture
 
 Summary:	KDE4 minimalistic window decoration
 Summary(pl.UTF-8):	Minimalistyczna dekoracja okien dla KDE4
-Name:		kde4-decoration-skulpture
+Name:		kde4-decoration-%{orgname}
 Version:	0.2.2.4
 Release:	0.9
 License:	GPL
 Group:		X11/Amusements
-Source0:	http://skulpture.maxiom.de/releases/skulpture-%{version}.tar.bz2
+Source0:	http://skulpture.maxiom.de/releases/%{orgname}-%{version}.tar.bz2
 # Source0-md5:	78b1a4796cb3945d86fccc770c034d49
 URL:		http://skulpture.maxiom.de/
 BuildRequires:	QtCore-devel >= %{qtver}
@@ -38,24 +39,25 @@ inne właściwości niespotykane w innych dekoracjach, jak na przykład
 wysoka konfigurowalność.
 
 %prep
-%setup -q -n skulpture-%{version}
+%setup -q -n %{orgname}-%{version}
 
 %build
-%cmake \
+install -d build
+cd build
+%cmake .. \
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
 	-DLIB_INSTALL_DIR=%{_libdir} \
 	-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
 %if "%{_lib}" == "lib64"
-	-DLIB_SUFFIX=64 \
+	-DLIB_SUFFIX=64
 %endif
-	.
 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} -C build install \
         DESTDIR=$RPM_BUILD_ROOT \
         kde_htmldir=%{_kdedocdir} \
         kde_libs_htmldir=%{_kdedocdir}
