@@ -6,12 +6,12 @@
 Summary:	KDE4 minimalistic window decoration
 Summary(pl.UTF-8):	Minimalistyczna dekoracja okien dla KDE4
 Name:		kde4-decoration-%{orgname}
-Version:	0.2.3
+Version:	0.2.4
 Release:	1
 License:	GPL
 Group:		X11/Amusements
 Source0:	http://skulpture.maxiom.de/releases/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	f810e03967e60d398849386418de1e91
+# Source0-md5:	50d38c49663b99134359324e178fcc6a
 URL:		http://skulpture.maxiom.de/
 BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	QtGui-devel >= %{qtver}
